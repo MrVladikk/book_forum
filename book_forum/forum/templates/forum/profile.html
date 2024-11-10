@@ -1,0 +1,20 @@
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{% static 'forum/style.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <h2>Профиль пользователя</h2>
+        <div class="profile-info">
+            <p><strong>Имя пользователя:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Биография:</strong> {{ user.profile.bio }}</p>
+        </div>
+        <a href="{% url 'logout' %}" class="btn btn-logout">Выйти</a>
+    </div>
+</body>
+</html>
